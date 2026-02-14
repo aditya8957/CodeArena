@@ -1,4 +1,4 @@
-CodeArena 🚀
+CodeArena - Coding Platform
 
 A Full Stack Coding Platform built using MERN Stack.
 
@@ -99,5 +99,6 @@ Database → MongoDB Atlas
 
 👨‍💻 Author
 
-Aditya Pratap
+Aditya Pratap 
+
 B.Tech CSE | MERN Developer
