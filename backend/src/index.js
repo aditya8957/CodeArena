@@ -16,7 +16,7 @@ const cors = require('cors')
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://codearena.vercel.app"
+        "hhttps://codearena-two.vercel.app/"
     ],
     credentials: true
 }));
