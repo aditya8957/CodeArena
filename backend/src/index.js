@@ -28,14 +28,16 @@ app.use('/ai',aiRouter);
 app.use("/video",videoRouter);
 
 
+const PORT = process.env.PORT || 4000;
+
 const InitalizeConnection = async ()=>{
     try{
 
         await Promise.all([main(),redisClient.connect()]);
         console.log("DB Connected");
         
-        app.listen(process.env.PORT, ()=>{
-            console.log("Server listening at port number: "+ process.env.PORT);
+        app.listen(PORT, ()=>{
+            console.log("Server listening at port number: "+ PORT);
         })
 
     }
