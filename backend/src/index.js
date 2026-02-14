@@ -28,7 +28,7 @@ app.use('/ai',aiRouter);
 app.use("/video",videoRouter);
 
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 
 const InitalizeConnection = async ()=>{
     try{
