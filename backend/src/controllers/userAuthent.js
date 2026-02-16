@@ -30,7 +30,17 @@ const register = async (req,res)=>{
         role:user.role,
     }
     
-     res.cookie('token',token,{maxAge: 60*60*1000});
+    //  res.cookie('token',token,{maxAge: 60*60*1000});
+
+        const isProduction = process.env.NODE_ENV === "production";
+
+        res.cookie("token", token, {
+        httpOnly: true,
+        secure: isProduction,       // MUST for HTTPS
+        sameSite: isProduction ? "None" : "Lax", 
+        maxAge: 60 * 60 * 1000
+        });
+
      res.status(201).json({
         user:reply,
         message:"Loggin Successfully"
@@ -67,7 +77,18 @@ const login = async (req,res)=>{
         }
 
         const token =  jwt.sign({_id:user._id , emailId:emailId, role:user.role},process.env.JWT_KEY,{expiresIn: 60*60});
-        res.cookie('token',token,{maxAge: 60*60*1000});
+        // res.cookie('token',token,{maxAge: 60*60*1000});
+
+
+        const isProduction = process.env.NODE_ENV === "production";
+
+        res.cookie("token", token, {
+        httpOnly: true,
+        secure: isProduction,       // MUST for HTTPS
+        sameSite: isProduction ? "None" : "Lax", 
+        maxAge: 60 * 60 * 1000
+        });
+
         res.status(201).json({
             user:reply,
             message:"Loggin Successfully"
@@ -196,14 +217,17 @@ const googleLogin = async (req, res) => {
       process.env.JWT_KEY,
       { expiresIn: "7d" } // ✅ Increase expiry to 7 days
     );
+    
+    const isProduction = process.env.NODE_ENV === "production";
 
-    // ✅ Set secure cookie (same as your regular login)
-    res.cookie('token', token, { 
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production', // ✅ Secure in production
-      sameSite: 'strict'
-    });
+        res.cookie("token", token, {
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        httpOnly: true,
+        secure: isProduction,
+        sameSite: isProduction ? "None" : "Lax",
+        });
+
+
     
     res.status(200).json({ 
       user: reply, 
