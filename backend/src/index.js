@@ -33,19 +33,6 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-// Optional: Session setup if you use session cookies
-app.use(session({
-  secret: process.env.SESSION_SECRET || 'keyboardcat',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
-    sameSite: 'none', // important for cross-origin cookies
-    maxAge: 24 * 60 * 60 * 1000 // 1 day
-  }
-}));
-
 // Routers
 app.use('/user', authRouter);
 app.use('/problem', problemRouter);
