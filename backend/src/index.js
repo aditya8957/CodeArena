@@ -15,6 +15,8 @@ const videoRouter = require("./routes/videoCreator");
 
 const allowedOrigins = [
     "http://localhost:5173",
+     "https://codearena24.tech",
+    "https://www.codearena24.tech",
     "https://codearena-two.vercel.app"
 ];
 
