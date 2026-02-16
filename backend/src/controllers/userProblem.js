@@ -234,25 +234,24 @@ const solvedAllProblembyUser =  async(req,res)=>{
     }
 }
 
-const submittedProblem = async(req,res)=>{
+  const submittedProblem = async(req,res)=>{
+    try{
+      const userId = req.result._id;
+      const problemId = req.params.pid;
 
-  try{
-     
-    const userId = req.result._id;
-    const problemId = req.params.pid;
+      const ans = await Submission.find({userId,problemId});
+    
+      if(ans.length === 0){
+        return res.status(200).send("No Submission is present");
+      }
 
-   const ans = await Submission.find({userId,problemId});
-  
-  if(ans.length==0)
-    res.status(200).send("No Submission is persent");
-
-  res.status(200).send(ans);
-
+      return res.status(200).send(ans);
+    }
+    catch(err){
+      return res.status(500).send("Internal Server Error");
+    }
   }
-  catch(err){
-     res.status(500).send("Internal Server Error");
-  }
-}
+
 
 
 
