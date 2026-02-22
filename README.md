@@ -1,104 +1,188 @@
-CodeArena - Coding Platform
+# 🚀 CodeArena – Full Stack Coding Platform
 
-A Full Stack Coding Platform built using MERN Stack.
+CodeArena is a Full Stack Coding Platform built using the MERN Stack.  
+Users can solve coding problems, submit solutions, and receive real-time execution results.  
+It includes secure authentication and role-based admin access for managing problems.
 
-🔥 About
+---
 
-CodeArena is a full-stack coding platform where users can solve programming problems, submit solutions, and get real-time execution results. It includes role-based access for admin problem management and secure authentication using JWT.
+## 🔥 Features
 
-🛠 Tech Stack
+- 🔐 Secure Login & Signup using JWT
+- 👨‍💻 Solve Coding Problems
+- ⚡ Real-Time Code Execution (Judge0 API)
+- 🛠 Admin Panel for Problem Management
+- 🌐 RESTful API Architecture
+- 🎯 Role-Based Access Control (User / Admin)
+- ☁️ Cloudinary Integration (if used)
+- 📦 Full MERN Stack Implementation
 
-Frontend:
+---
 
-React (Vite)
+## 🛠 Tech Stack
 
-Tailwind CSS
+### 💻 Frontend
+- React (Vite)
+- Tailwind CSS
+- Axios
 
-Axios
+### 🖥 Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
 
-Backend:
+### ⚙️ External Services
+- Judge0 API (Code Execution)
+- MongoDB Atlas (Database)
+- Render (Backend Deployment)
+- Vercel (Frontend Deployment)
 
-Node.js
+---
 
-Express.js
+## 📁 Project Structure
 
-MongoDB
-
-JWT Authentication
-
-Other:
-
-Judge0 API (Code Execution)
-
-✨ Features
-
-🔐 Secure Login & Signup (JWT)
-
-👨‍💻 Solve Coding Problems
-
-⚡ Real-time Code Execution
-
-🛠 Admin Panel for Problem Management
-
-🌐 RESTful APIs
-
-🎯 Role-Based Access Control
-
-📁 Project Structure
+```
 CodeArena/
- ├── frontend/
- └── backend/
+│
+├── frontend/
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   └── App.jsx
+│
+└── backend/
+    ├── controllers/
+    ├── routes/
+    ├── models/
+    ├── middleware/
+    └── server.js
+```
 
-⚙️ Installation (Local Setup)
-1️⃣ Clone Repository
+---
+
+# 🚀 Local Installation Guide
+
+Follow the steps below to run the project locally.
+
+---
+
+## 📁 1️⃣ Clone Repository
+
+```bash
 git clone https://github.com/aditya8957/CodeArena.git
 cd CodeArena
+```
 
-2️⃣ Backend Setup
+---
+
+## 🖥 2️⃣ Backend Setup
+
+```bash
 cd backend
 npm install
+```
 
+### 🔐 Create `.env` file inside backend folder:
 
-Create .env file:
+```env
+DB_CONNECT=your_mongodb_connection_string
+PORT=4000
+JWT_KEY=your_jwt_secret_key
+Judge0=your_api_key
+CLOUD_NAME=your_cloud_name
+API_KEY=your_api_key
+API_SECRET=your_api_secret
 
-DB_CONNECT_STRING
-PORT
-JWT_KEY
-CLOUDINARY_CLOUD_NAME
-CLOUDINARY_API_KEY
-CLOUDINARY_API_SECRET
-GOOGLE_CLIENT_ID
-GOOGLE_CLIENT_SECRET
+GOOGLE_CLIENT_ID=your_google_client_id
+```
 
+### ▶️ Run Backend
 
-Run backend:
-
+```bash
 node server.js
+```
 
-3️⃣ Frontend Setup
+Backend will run at:
+
+```
+http://localhost:4000
+```
+
+---
+
+## 💻 3️⃣ Frontend Setup
+
+Open a new terminal:
+
+```bash
 cd frontend
 npm install
+```
 
+### 🔐 Create `.env` file inside frontend folder:
 
-Create .env file:
-
+```env
 VITE_API_URL=http://localhost:4000
+```
 
+### ▶️ Run Frontend
 
-Run frontend:
-
+```bash
 npm run dev
+```
 
-🌍 Deployment
+Frontend will run at:
 
-Backend → Render
+```
+http://localhost:5173
+```
 
-Frontend → Vercel
+---
 
-Database → MongoDB Atlas
+# 🌍 Deployment
 
-👨‍💻 Author
+- Backend → Render  
+- Frontend → Vercel  
+- Database → MongoDB Atlas  
 
-Aditya Pratap 
+---
 
-B.Tech CSE | MERN Developer
+# 🛡️ Security Notice
+
+- Do NOT commit `.env` files
+- Add `.env` to `.gitignore`
+- Keep JWT and API keys private
+
+Example `.gitignore`:
+
+```bash
+node_modules
+.env
+dist
+```
+
+---
+---
+
+# 📜 License
+
+© 2026 Aditya Pratap. All Rights Reserved.
+
+This project and its source code are the intellectual property of Aditya Pratap.
+
+---
+
+
+
+# 👨‍💻 Author
+
+**Aditya Pratap**  
+B.Tech CS | MERN Stack Developer  
+GitHub: https://github.com/aditya8957
+
+---
+
+# ⭐ If You Like This Project
+
+Give it a ⭐ on GitHub and feel free to contribute!
